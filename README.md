@@ -21,7 +21,7 @@ If you are feeling generous, and would like to support my work, you can do so th
 ### Method 2
 - Start up Foundry and click "Install Module" in the "Add-On Modules" tab.
 - Paste one of the following:
-  - Latest release: `https://raw.githubusercontent.com/RedReign/FoundryVTT-BetterRolls5e/master/betterrolls5e/module.json`
+  - Latest release: `https://raw.githubusercontent.com/kidaly-fndr/FoundryVTT-BetterRolls5e-KidalyFork/master/betterrolls5e/module.json`
   - The module.json listed in any of the releases (for either an older version or an alpha version)
 - Click "Install" and it should appear in your modules list.
 - Enjoy!
