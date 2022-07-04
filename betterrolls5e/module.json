@@ -1,12 +1,12 @@
 {
   "name": "betterrolls5e",
-  "title": "Better Rolls for 5e",
+  "title": "Better Rolls for 5e (Kidaly Fix)",
   "description": "This module overhauls rolls for the D&amp;D 5e system, allowing \"dual rolls\" for d20 rolls, buttons that support full output to chat, and customization for said outputs.",
   "author": "Red Reign#5128",
-  "authors": [],
-  "url": "https://github.com/RedReign/FoundryVTT-BetterRolls5e/tree/master/betterrolls5e",
+  "authors": ["Red Reign#5128", "also pyro kekw"],
+  "url": "https://github.com/kidaly-fndr/FoundryVTT-BetterRolls5e-KidalyFork/tree/master/betterrolls5e",
   "flags": {},
-  "version": "1.7.2",
+  "version": "1.7.3k",
   "minimumCoreVersion": "0.8.6",
   "compatibleCoreVersion": "9",
   "scripts": [
