@@ -48,7 +48,7 @@ export class RollFields {
 	 * @param {BRSettings} options.settings additional settings to override
 	 * @returns {import("./renderer.js").MultiRollDataProps}
 	 */
-	static constructMultiRoll(options={}) {
+	static async constructMultiRoll(options={}) {
 		const { critThreshold, title, rollType, elvenAccuracy } = options;
 		if (!options.formula) {
 			console.error("No formula given for multi-roll");
@@ -81,7 +81,7 @@ export class RollFields {
 			const fullRoll = new Roll(formula);
 			const baseRoll = new Roll(fullRoll.terms[0].formula ?? fullRoll.terms[0]);
 			const bonusRollFormula = [...fullRoll.terms.slice(1).map(t => t.formula ?? t)].join(' ') || "0";
-			const bonusRoll = new Roll(bonusRollFormula).roll({async: false});
+			const bonusRoll = await new Roll(bonusRollFormula).roll({async: true});
 
 			// Populate the roll entries
 			const entries = [];
@@ -165,7 +165,7 @@ export class RollFields {
 		// Get Roll. Use Formula if given, otherwise get it from the item
 		let roll = null;
 		if (formula) {
-			const rollData = Utils.getRollData({item, actor, abilityMod, slotLevel });
+			const rollData = await Utils.getRollData({item, actor, abilityMod, slotLevel });
 			roll = new Roll(formula, rollData);
 		} else if (item) {
 			roll = await ItemUtils.getAttackRoll(item);
@@ -174,7 +174,7 @@ export class RollFields {
 		}
 
 		// Construct the multiroll
-		return RollFields.constructMultiRoll({
+		return await RollFields.constructMultiRoll({
 			...options,
 			formula: roll,
 			rollState,
